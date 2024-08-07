@@ -1,13 +1,13 @@
-import powImage from '../../assets/PowStory.jpg';
-import CharlieBacon from '../../assets/CharlieBacon.jpg';
-import PowCover from '../../assets/POWCover.png';
-import powMap from '../../assets/POWMap.png';
-import kitbag from '../../assets/Kitbag.jpg';
-import powCollection from '../../assets/powCollection.jpg';
-import powFlipThrough from '../../assets/P.O.W.StoryFlipThrough.mp4';
-import InlineGrid from '../../components/InlineGrid';
-import InlineGridReverse from '../../components/InlineGridReverse';
-import InlineGridReverseVideo from '../../components/InlineGridVideoReverse';
+import powImage from '../assets/PowStory.jpg';
+import CharlieBacon from '../assets/CharlieBacon.jpg';
+import PowCover from '../assets/POWCover.png';
+import powMap from '../assets/POWMap.png';
+import kitbag from '../assets/Kitbag.jpg';
+import powCollection from '../assets/powCollection.jpg';
+import powFlipThrough from '../assets/P.O.W.StoryFlipThrough.mp4';
+import InlineGrid from '../components/InlineGrid';
+import InlineGridReverse from '../components/InlineGridReverse';
+import InlineGridReverseVideo from '../components/InlineGridVideoReverse';
 const POWStoryPage = () => {
     return (
         <>

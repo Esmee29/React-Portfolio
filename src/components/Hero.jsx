@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import './Hero.css';
 import { VscCode } from "react-icons/vsc";
 import { CiPen } from "react-icons/ci";
+import './Hero.css';
 
 const words = ['Designer', 'Developer', 'Creative'];
 
@@ -17,11 +17,11 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="container bg-gradient-to-tl from-sky-400 to-blue-900 text-white h-64 flex justify-center items-center">
+        <div className="hero-container bg-gradient-to-b from-blue-900 to-blue-600 text-white h-64 flex justify-center items-center">
             <VscCode className="text-3xl md:text-5xl mr-4" />
             <div className="text-center">
-                <h1 className="text-3xl md:text-5xl font-bold">Esmee Fulcher</h1>
-                <p className="text-lg md:text-2xl">
+                <h1 className="text-3xl md:text-5xl font-bold text-shadow">Esmee Fulcher</h1>
+                <p className="text-lg md:text-2xl text-shadow">
                     I&#39;m a <span className="fade-text font-bold">{words[index]}</span>
                 </p>
             </div>

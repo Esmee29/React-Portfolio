@@ -1,16 +1,16 @@
-import InlineGrid from '../../components/InlineGrid';
-import CenteredText from '../../components/CenteredText';
-import InlineGridReverse from '../../components/InlineGridReverse';
-import InlineGridVideo from '../../components/InlineGridVideo';
-import InlineGridReverseVideo from '../../components/InlineGridVideoReverse';
-import supersonicImage from '../../assets/Supersonic.webp';
-import SupersonicPhone from '../../assets/SupersonicPhone.png';
-import SupersonicScreens from '../../assets/SupersonicScreens.jpg';
-import SupersonicVideo from '../../assets/Supersonic.mp4';
-import SupersonicNewUser from '../../assets/SupersonicNewUser.mp4';
-import SupersonicAlert from '../../assets/SupersonicAlert.mp4';
-import SupersonicLogo from '../../assets/supersonic-logo.jpg';
-import Button from '../../components/Button';
+import InlineGrid from '../components/InlineGrid';
+import CenteredText from '../components/CenteredText';
+import InlineGridReverse from '../components/InlineGridReverse';
+import InlineGridVideo from '../components/InlineGridVideo';
+import InlineGridReverseVideo from '../components/InlineGridVideoReverse';
+import supersonicImage from '../assets/Supersonic.webp';
+import SupersonicPhone from '../assets/SupersonicPhone.png';
+import SupersonicScreens from '../assets/SupersonicScreens.jpg';
+import SupersonicVideo from '../assets/Supersonic.mp4';
+import SupersonicNewUser from '../assets/SupersonicNewUser.mp4';
+import SupersonicAlert from '../assets/SupersonicAlert.mp4';
+import SupersonicLogo from '../assets/supersonic-logo.jpg';
+import Button from '../components/Button';
 const SupersonicPage = () => {
     return (
      <>

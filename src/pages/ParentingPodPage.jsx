@@ -1,15 +1,15 @@
-import parentingPodImage from '../../assets/baby.webp';
-import podSlides from '../../assets/podSlides.png';
-import Day from '../../assets/Day.png';
-import Night from '../../assets/Night.png';
-import podDay from '../../assets/podDay.png';
-import podLogo from '../../assets/podLogo.png';
-import NightClickThrough from '../../assets/NightClickThrough.mp4';
-import InlineGrid from '../../components/InlineGrid';
-import InlineGridReverse from '../../components/InlineGridReverse';
-import InlineTwoImages from '../../components/InlineTwoImages';
-import InlineGridReverseVideo from '../../components/InlineGridVideoReverse';
-import Button from '../../components/Button';
+import parentingPodImage from '../assets/baby.webp';
+import podSlides from '../assets/podSlides.png';
+import Day from '../assets/Day.png';
+import Night from '../assets/Night.png';
+import podDay from '../assets/podDay.png';
+import podLogo from '../assets/podLogo.png';
+import NightClickThrough from '../assets/NightClickThrough.mp4';
+import InlineGrid from '../components/InlineGrid';
+import InlineGridReverse from '../components/InlineGridReverse';
+import InlineTwoImages from '../components/InlineTwoImages';
+import InlineGridReverseVideo from '../components/InlineGridVideoReverse';
+import Button from '../components/Button';
 
 const ParentingPodPage = () => {
     return (
@@ -43,12 +43,14 @@ const ParentingPodPage = () => {
         }
         imageSrc={podSlides}
       />
-      <InlineGridReverse 
+      <InlineGridReverseVideo 
        subheading="The Solution" 
        content={
          <p>Parenting Pod, an app to help parents’ mental health, with podcasts sound machines and meditation. Assisting parents day or night to relax, unwind and get themselves and or their children to sleep.</p>
        }
-       imageSrc={Day}
+       videoSrc={NightClickThrough}
+       muted={true}
+        autoPlay={false}
       />
       <InlineGrid 
         subheading="The Logo" 

@@ -1,12 +1,12 @@
-import foragerImage from '../../assets/forager-app.webp';
-import InlineGrid from '../../components/InlineGrid';
-import InlineGridReverse from '../../components/InlineGridReverse';
-import ForagerSlides from '../../assets/forager-slides.jpg';
-import ForagerTote from '../../assets/forager-tote.png';
-import ForagerFrame from '../../assets/Forager-Frame.png';
-import ForagerSocial from '../../assets/forager-social.png';
-import Button from '../../components/Button';
-import CenteredText from '../../components/CenteredText';
+import foragerImage from '../assets/forager-app.webp';
+import InlineGrid from '../components/InlineGrid';
+import InlineGridReverse from '../components/InlineGridReverse';
+import ForagerSlides from '../assets/forager-slides.jpg';
+import ForagerTote from '../assets/forager-tote.png';
+import ForagerFrame from '../assets/Forager-Frame.png';
+import ForagerSocial from '../assets/forager-social.png';
+import Button from '../components/Button';
+import CenteredText from '../components/CenteredText';
 
 const ForagerPage = () => {
     return (

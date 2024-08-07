@@ -9,28 +9,28 @@ const DesignProjectsPage = () => {
     {
       imageUrl: supersonicImage,
       projectName: 'Supersonic',
-      caseStudyLink: '/projects/supersonic',
+      caseStudyLink: '/supersonic',
     },
     {
       imageUrl: foragerImage,
       projectName: 'Forager',
-      caseStudyLink: '/projects/forager',
+      caseStudyLink: '/forager',
     },
     {
       imageUrl: powImage,
       projectName: 'P.O.W. Story',
-      caseStudyLink: '/projects/pow-story',
+      caseStudyLink: '/pow-story',
     },
     {
       imageUrl: parentingPodImage,
       projectName: 'Parenting Pod',
-      caseStudyLink: '/projects/parenting-pod',
+      caseStudyLink: '/parenting-pod',
     },
   ];
 
   return (
-    <div className="bg-gray-100 min-h-screen p-6">
-      <h2 className="text-2xl font-bold mb-4">Design Projects</h2>
+    <div className="bg-blue-900 min-h-screen p-6 text-white">
+      <h2 className="text-2xl font-bold mb-6 text-blue-300">Design Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {designProjects.map((project, index) => (
           <Card

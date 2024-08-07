@@ -1,12 +1,34 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Logo from '../assets/logo-1.svg';
+import { useState, useEffect } from 'react'; // Import useEffect here
+import { Link, useLocation } from 'react-router-dom';
+import Logo from '../assets/favicon-32x32.png';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
+  const location = useLocation(); // Get the current location
+
+  // Update active item based on current path
+  const updateActiveItem = () => {
+    const path = location.pathname;
+    if (path === '/') {
+      setActiveItem('home');
+    } else if (path === '/design-projects') {
+      setActiveItem('design-projects');
+    } else if (path === '/developer-projects') {
+      setActiveItem('developer-projects');
+    } else if (path === '/about') {
+      setActiveItem('about');
+    } else if (path === '/contact') {
+      setActiveItem('contact');
+    }
+  };
+
+  // Update active item on location change
+  useEffect(() => {
+    updateActiveItem();
+  }, [location]);
 
   const toggleNavbar = () => {
     setIsNavbarVisible(!isNavbarVisible);
@@ -21,15 +43,29 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <nav className="bg-blue-900 text-white border-gray-200 dark:border-gray-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        {/* Logo - visible only on mobile screens */}
+        <Link 
+          to="/" 
+          className="flex items-center space-x-3 rtl:space-x-reverse md:hidden"
+          onClick={() => handleItemClick('home')} // Set activeItem to 'home'
+        >
           <img src={Logo} className="h-8" alt="Logo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Esmee Fulcher</span>
         </Link>
+        
+        {/* "Esmee Fulcher" - visible only on larger screens */}
+        <Link 
+          to="/" 
+          className="hidden md:flex items-center space-x-3 rtl:space-x-reverse"
+          onClick={() => handleItemClick('home')} // Set activeItem to 'home'
+        >
+          <span className="self-center text-2xl font-semibold whitespace-nowrap">Esmee Fulcher</span>
+        </Link>
+        
         <button
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-200 rounded-lg md:hidden hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-600"
           onClick={toggleNavbar}
           aria-controls="navbar-dropdown"
           aria-expanded={isNavbarVisible}
@@ -40,11 +76,11 @@ const Navbar = () => {
           </svg>
         </button>
         <div className={`w-full md:block md:w-auto ${isNavbarVisible ? 'block' : 'hidden'}`} id="navbar-dropdown">
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-blue-900 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             <li>
               <Link
                 to="/"
-                className={`block py-2 px-3 ${activeItem === 'home' ? 'text-blue-700 dark:text-blue-500' : 'text-gray-900 dark:text-white'} rounded md:bg-transparent md:p-0`}
+                className={`block py-2 px-3 ${activeItem === 'home' ? 'text-blue-300' : 'text-gray-200'} rounded md:p-0 hover:text-blue-300`}
                 aria-current="page"
                 onClick={() => handleItemClick('home')}
               >
@@ -54,17 +90,16 @@ const Navbar = () => {
             <li className="relative">
               <button
                 onClick={toggleDropdown}
-                className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                className="flex items-center justify-between w-full py-2 px-3 text-gray-200 rounded hover:bg-blue-800 md:hover:bg-transparent md:border-0 md:hover:text-blue-300 md:p-0"
               >
                 Projects {isDropdownVisible ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
               </button>
-              <div id="dropdownNavbar" className={`absolute left-0 top-full mt-2 z-10 ${isDropdownVisible ? 'block' : 'hidden'} font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600`}>
-                <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                  
+              <div id="dropdownNavbar" className={`absolute left-0 top-full mt-2 z-10 ${isDropdownVisible ? 'block' : 'hidden'} font-normal bg-blue-900 divide-y divide-gray-700 rounded-lg shadow w-44`}>
+                <ul className="py-2 text-sm">
                   <li>
                     <Link
                       to="/design-projects"
-                      className={`block px-4 py-2 ${activeItem === 'design-projects' ? 'text-blue-700 dark:text-blue-500' : 'text-gray-900 dark:text-white'} hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white`}
+                      className={`block px-4 py-2 rounded ${activeItem === 'design-projects' ? 'bg-blue-800 text-blue-300' : 'text-gray-200 hover:bg-blue-800 hover:text-blue-300'}`}
                       aria-current="page"
                       onClick={() => handleItemClick('design-projects')}
                     >
@@ -74,7 +109,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       to="/developer-projects"
-                      className={`block px-4 py-2 ${activeItem === 'developer-projects' ? 'text-blue-700 dark:text-blue-500' : 'text-gray-900 dark:text-white'} hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white`}
+                      className={`block px-4 py-2 rounded ${activeItem === 'developer-projects' ? 'bg-blue-800 text-blue-300' : 'text-gray-200 hover:bg-blue-800 hover:text-blue-300'}`}
                       aria-current="page"
                       onClick={() => handleItemClick('developer-projects')}
                     >
@@ -87,7 +122,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/about"
-                className={`block py-2 px-3 ${activeItem === 'about' ? 'text-blue-700 dark:text-blue-500' : 'text-gray-900 dark:text-white'} rounded md:bg-transparent md:p-0`}
+                className={`block py-2 px-3 ${activeItem === 'about' ? 'text-blue-300' : 'text-gray-200 hover:text-blue-300'} rounded md:p-0`} // Updated styles
                 aria-current="page"
                 onClick={() => handleItemClick('about')}
               >
@@ -97,7 +132,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/contact"
-                className={`block py-2 px-3 ${activeItem === 'contact' ? 'text-blue-700 dark:text-blue-500' : 'text-gray-900 dark:text-white'} rounded md:bg-transparent md:p-0`}
+                className={`block py-2 px-3 ${activeItem === 'contact' ? 'text-blue-300' : 'text-gray-200 hover:text-blue-300'} rounded md:p-0`} // Updated styles
                 aria-current="page"
                 onClick={() => handleItemClick('contact')}
               >

@@ -45,7 +45,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="bg-blue-600 min-h-screen p-6 text-white">
+    <div id="projects" className="bg-blue-600 min-h-screen p-6 text-white">
       <section className="mb-12">
         <div className="bg-blue-900 p-6 rounded-lg">
           <div className="flex flex-col items-center md:flex-row md:items-center md:justify-between">

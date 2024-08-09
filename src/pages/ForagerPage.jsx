@@ -5,12 +5,12 @@ import ForagerSlides from '../assets/forager-slides.jpg';
 import ForagerTote from '../assets/forager-tote.png';
 import ForagerFrame from '../assets/Forager-Frame.png';
 import ForagerSocial from '../assets/forager-social.png';
+import ForagerMap from '../assets/forager-map.webp';
 import Button from '../components/Button';
-import CenteredText from '../components/CenteredText';
 
 const ForagerPage = () => {
     return (
-      <>
+      <div className="bg-blue-600 text-white min-h-screen p-6">
       <div className="flex flex-col items-center">
         <h1 className='text-5xl font-semibold mb-5'>Forager</h1>
         <img src={foragerImage} alt="Forager App" className="w-3/4 h-1/3 rounded-md" />
@@ -28,7 +28,7 @@ const ForagerPage = () => {
         content={
             <p>To address weaknesses in current food systems and to get people thinking differently about the food they eat and where it comes from.</p>
           }
-          imageSrc={ForagerTote}
+          imageSrc={ForagerMap}
       />
       <InlineGrid 
         subheading="The Problem" 
@@ -44,10 +44,14 @@ const ForagerPage = () => {
           }
           imageSrc={ForagerFrame}
       />
-      <CenteredText 
-        subheading="Expansion Strategy"
-        paragraph="I envision the Forager app as part of a larger foraging movement. Alongside the app, there will be a social media presence and merchandise, such as tote bags designed for collecting foraged items."
+      <InlineGrid 
+        subheading="Expansion Strategy" 
+        content={
+            <p>I envision the Forager app as part of a larger foraging movement. Alongside the app, there will be a social media presence and merchandise, such as tote bags designed for collecting foraged items.</p>
+          }
+          imageSrc={ForagerTote}
       />
+      
       <br />
       <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
         <Button 
@@ -61,7 +65,7 @@ const ForagerPage = () => {
           isPrimary={false}
         />
       </div>
-      </>
+      </div>
     );
   };
   

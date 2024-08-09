@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/supersonic" element={<SupersonicPage />} />
         <Route path="/forager" element={<ForagerPage />} />
         <Route path="/pow-story" element={<POWStoryPage />} />
-        <Route path="/pparenting-pod" element={<ParentingPodPage />} />
+        <Route path="/parenting-pod" element={<ParentingPodPage />} />
         <Route path="/netmatters" element={<NetmattersPage />} />
         <Route path="/netmatters-contact" element={<NetmattersContactPage />} />
         <Route path="/javascript-array" element={<JavascriptArrayPage />} />

@@ -13,7 +13,7 @@ import Button from '../components/Button';
 
 const ParentingPodPage = () => {
     return (
-        <>
+        <div className="bg-blue-600 text-white min-h-screen p-6">
         <div className="flex flex-col items-center">
         <h1 className='text-5xl font-semibold mb-5'>Parenting Pod</h1>
         <img src={parentingPodImage} alt="Parenting Pod App" className="w-3/4 h-1/3 rounded-md" />
@@ -71,7 +71,7 @@ const ParentingPodPage = () => {
           isPrimary={false}
         />
       </div>
-        </>
+        </div>
     )
 
 };

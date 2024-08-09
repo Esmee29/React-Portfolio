@@ -10,7 +10,7 @@ import InlineGridReverse from '../components/InlineGridReverse';
 import InlineGridReverseVideo from '../components/InlineGridVideoReverse';
 const POWStoryPage = () => {
     return (
-        <>
+        <div className="bg-blue-600 text-white min-h-screen p-6">
         <div className="flex flex-col items-center">
         <h1 className='text-5xl font-semibold mb-5'>P.O.W. Story</h1>
         <img src={powImage} alt="P.O.W. Story" className="w-3/4 h-1/3 rounded-md" />
@@ -65,7 +65,7 @@ const POWStoryPage = () => {
         }
         imageSrc={powCollection}
       />
-        </>
+        </div>
     )
 }
 

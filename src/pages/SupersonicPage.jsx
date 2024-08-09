@@ -11,14 +11,14 @@ import SupersonicNewUser from '../assets/SupersonicNewUser.mp4';
 import SupersonicAlert from '../assets/SupersonicAlert.mp4';
 import SupersonicLogo from '../assets/supersonic-logo.jpg';
 import Button from '../components/Button';
+
 const SupersonicPage = () => {
-    return (
-     <>
-     <div className="flex flex-col items-center">
-        <h1 className='text-5xl font-semibold mb-5'>Supersonic</h1>
-        <img src={supersonicImage} alt="Supsonic App" className="w-3/4 h-1/3 rounded-md" />
-        
-      </div>
+  return (
+    <div className="bg-blue-600 text-white min-h-screen p-6">
+      <div className="flex flex-col items-center">
+      <h1 className='text-5xl font-semibold mb-5'>Supersonic</h1>
+      <img src={supersonicImage} alt="Supersonic App" className="w-3/4 h-1/3 rounded-md" />
+      
       <InlineGrid 
         subheading="Overview" 
         content={
@@ -29,7 +29,7 @@ const SupersonicPage = () => {
       <InlineGridReverse 
         subheading="The Brief" 
         content={
-          <p>Many people struggle to find concert tickets for their favorite music genres and artists. They often miss out on ticket releases due to a lack of timely information, and when they do find tickets, they are frequently too expensive.</p>
+          <p>The project aims to create a brand, product, or experience inspired by a given hip-hop lyric. The result is an app that gets users to the concerts they want to see, tailoring the content they see, notifying them of ticket releases so they don’t miss out, and providing opportunities to win tickets through exciting draws.</p>
         }
         imageSrc={SupersonicScreens}
       />
@@ -52,12 +52,12 @@ const SupersonicPage = () => {
         autoPlay={true}
       />
       <InlineGridReverseVideo 
-       subheading="The Solution" 
-       content={
-        <p>Supersonic, the go-to app for music lovers, tailors its content to users' preferences, making it easier to find and secure concert tickets. Users can select their favorite genres, sync their streaming services, and receive timely notifications for ticket releases, ensuring they never miss the concerts they want to see. The app also helps keep ticket prices low and offers opportunities to win tickets through exciting draws.</p>
-      }
-       videoSrc={SupersonicNewUser}
-       muted={true}
+        subheading="The Solution" 
+        content={
+          <p>Supersonic, the go-to app for music lovers, tailors its content to users' preferences, making it easier to find and secure concert tickets. Users can select their favorite genres, sync their streaming services, and receive timely notifications for ticket releases, ensuring they never miss the concerts they want to see. The app also helps keep ticket prices low and offers opportunities to win tickets through exciting draws.</p>
+        }
+        videoSrc={SupersonicNewUser}
+        muted={true}
         autoPlay={true}
       />
       <InlineGrid 
@@ -67,20 +67,19 @@ const SupersonicPage = () => {
         }
         imageSrc={SupersonicLogo}
       />
-      
       <InlineGridVideo 
         subheading="Special Features"
         content={
           <ul className="list-disc pl-5 space-y-2 text-lg">
-            <li>Countdown notifications with a Supersonic Boom alert to notify users of upcoming ticket releases and ticket drops, ensuring they don't miss out.</li>
-            <li>Ticket drops provide additional opportunities for users to secure concert tickets for their favorite artists.</li>
-          </ul>
+           <li>Countdown notifications with a Supersonic Boom alert to notify users of upcoming ticket releases and ticket drops, ensuring they don't miss out.</li>
+                                <li>Ticket drops provide additional opportunities for users to secure concert tickets for their favorite artists.</li>
+                            </ul>
         }
         videoSrc={SupersonicAlert}
         muted={false}
         autoPlay={false}
       />
-      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex gap-4">
+      <div className="flex justify-center mt-8 gap-4">
         <Button 
           link="https://www.figma.com/design/0affawmAKba5tC7LEeNDa4/Supersonic?node-id=26-15&t=knAurhwwm7oMWAbB-1"
           text="Figma File"
@@ -92,8 +91,10 @@ const SupersonicPage = () => {
           isPrimary={false}
         />
       </div>
-     </>
-    );
-  };
-  
-  export default SupersonicPage;
+    </div>
+    </div>
+    
+  );
+};
+
+export default SupersonicPage;
